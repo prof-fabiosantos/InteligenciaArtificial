@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/covid_ontology.owl"
+         xmlns="http://www.example.org/covid_ontology.owl#">
+
+<owl:Ontology rdf:about="http://www.example.org/covid_ontology.owl"/>
+
+<owl:ObjectProperty rdf:about="#temSintoma">
+  <rdfs:domain rdf:resource="#Paciente"/>
+  <rdfs:range rdf:resource="#Sintoma"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#temDiagnostico">
+  <rdfs:domain rdf:resource="#Paciente"/>
+  <rdfs:range rdf:resource="#Diagnostico"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#temTratamento">
+  <rdfs:domain rdf:resource="#Diagnostico"/>
+  <rdfs:range rdf:resource="#Tratamento"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Pessoa">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Paciente">
+  <rdfs:subClassOf rdf:resource="#Pessoa"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sintoma">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Diagnostico">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tratamento">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Paciente_Fabio">
+  <rdf:type rdf:resource="#Paciente"/>
+  <temSintoma rdf:resource="#Febre"/>
+  <temSintoma rdf:resource="#Tosse"/>
+  <temSintoma rdf:resource="#Dificuldade_Respiratória"/>
+  <temDiagnostico rdf:resource="#COVID-19"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Febre">
+  <rdf:type rdf:resource="#Sintoma"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tosse">
+  <rdf:type rdf:resource="#Sintoma"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Dificuldade_Respiratória">
+  <rdf:type rdf:resource="#Sintoma"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gripe">
+  <rdf:type rdf:resource="#Diagnostico"/>
+  <temTratamento rdf:resource="#Ant-gripal"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pneumonia">
+  <rdf:type rdf:resource="#Diagnostico"/>
+  <temTratamento rdf:resource="#Antibiotico"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#COVID-19">
+  <rdf:type rdf:resource="#Diagnostico"/>
+  <temTratamento rdf:resource="#Vacina"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Alergia">
+  <rdf:type rdf:resource="#Diagnostico"/>
+  <temTratamento rdf:resource="#Ant-alergico"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Vacina">
+  <rdf:type rdf:resource="#Tratamento"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ant-gripal">
+  <rdf:type rdf:resource="#Tratamento"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ant-alergico">
+  <rdf:type rdf:resource="#Tratamento"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Antibiotico">
+  <rdf:type rdf:resource="#Tratamento"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

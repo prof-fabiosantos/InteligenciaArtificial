@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/eletronics.owl"
+         xmlns="http://www.example.org/eletronics.owl#">
+
+<owl:Ontology rdf:about="http://www.example.org/eletronics.owl"/>
+
+<owl:ObjectProperty rdf:about="#temAcessorio">
+  <rdfs:domain rdf:resource="#DispositivoEletronico"/>
+  <rdfs:range rdf:resource="#Acessorio"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#DispositivoEletronico">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Smartphone">
+  <rdfs:subClassOf rdf:resource="#DispositivoEletronico"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Computador">
+  <rdfs:subClassOf rdf:resource="#DispositivoEletronico"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Notebook">
+  <rdfs:subClassOf rdf:resource="#Computador"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PC">
+  <rdfs:subClassOf rdf:resource="#Computador"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Videogame">
+  <rdfs:subClassOf rdf:resource="#DispositivoEletronico"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Xbox">
+  <rdfs:subClassOf rdf:resource="#Videogame"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PlayStation">
+  <rdfs:subClassOf rdf:resource="#Videogame"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Acessorio">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CapaSmartphone">
+  <rdfs:subClassOf rdf:resource="#Acessorio"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Mouse">
+  <rdfs:subClassOf rdf:resource="#Acessorio"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Headset">
+  <rdfs:subClassOf rdf:resource="#Acessorio"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Pendrive">
+  <rdfs:subClassOf rdf:resource="#Acessorio"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Smartphone iPhone 12">
+  <rdf:type rdf:resource="#Smartphone"/>
+  <temAcessorio rdf:resource="#Capa para celular"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Capa para celular">
+  <rdf:type rdf:resource="#CapaSmartphone"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Notebook Avell">
+  <rdf:type rdf:resource="#Notebook"/>
+  <temAcessorio rdf:resource="#Mouse Logitec"/>
+  <temAcessorio rdf:resource="#Headset Sony"/>
+  <temAcessorio rdf:resource="#Pendrive 16GB"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mouse Logitec">
+  <rdf:type rdf:resource="#Mouse"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Headset Sony">
+  <rdf:type rdf:resource="#Headset"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pendrive 16GB">
+  <rdf:type rdf:resource="#Pendrive"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pc1">
+  <rdf:type rdf:resource="#PC"/>
+  <temAcessorio rdf:resource="#mouse_pc1"/>
+  <temAcessorio rdf:resource="#headset_pc1"/>
+  <temAcessorio rdf:resource="#pendrive_pc1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mouse_pc1">
+  <rdf:type rdf:resource="#Mouse"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#headset_pc1">
+  <rdf:type rdf:resource="#Headset"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pendrive_pc1">
+  <rdf:type rdf:resource="#Pendrive"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#xbox1">
+  <rdf:type rdf:resource="#Xbox"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#playstation1">
+  <rdf:type rdf:resource="#PlayStation"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/universidade.owl"
+         xmlns="http://www.example.org/universidade.owl#">
+
+<owl:Ontology rdf:about="http://www.example.org/universidade.owl"/>
+
+<owl:ObjectProperty rdf:about="#ministraCurso">
+  <rdfs:domain rdf:resource="#Professor"/>
+  <rdfs:range rdf:resource="#Curso"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pertenceCurso">
+  <rdfs:domain rdf:resource="#Aluno"/>
+  <rdfs:range rdf:resource="#Curso"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pertenceDepartamento">
+  <rdfs:domain rdf:resource="#Professor"/>
+  <rdfs:domain rdf:resource="#Aluno"/>
+  <rdfs:range rdf:resource="#Departamento"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#estaLocalizadoEm">
+  <rdfs:domain rdf:resource="#Departamento"/>
+  <rdfs:domain rdf:resource="#Curso"/>
+  <rdfs:range rdf:resource="#Prédio"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Curso">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Professor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Aluno">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Departamento">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Prédio">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Prof_Fabio_Santos">
+  <rdf:type rdf:resource="#Professor"/>
+  <ministraCurso rdf:resource="#Sistemas_de_Informação"/>
+  <pertenceDepartamento rdf:resource="#Departamento_de_Computação"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sistemas_de_Informação">
+  <rdf:type rdf:resource="#Curso"/>
+  <pertenceDepartamento rdf:resource="#Departamento_de_Computação"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Departamento_de_Computação">
+  <rdf:type rdf:resource="#Departamento"/>
+  <estaLocalizadoEm rdf:resource="#EST"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#EST">
+  <rdf:type rdf:resource="#Prédio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mario_Silva">
+  <rdf:type rdf:resource="#Aluno"/>
+  <pertenceCurso rdf:resource="#Sistemas_de_Informação"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
